@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{86fb4f5a-7a88-4f0b-874a-99f45433e13d}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>search\pacman.py</StartupFile>
+    <StartupFile>search\autograder.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>search</WorkingDirectory>
