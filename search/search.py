@@ -17,6 +17,7 @@ In search.py, you will implement generic search algorithms which are called by
 Pacman agents (in searchAgents.py).
 """
 
+from xml.dom.expatbuilder import ParseEscape
 import util
 
 class SearchProblem:
@@ -87,17 +88,86 @@ def depthFirstSearch(problem):
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    from util import Stack
+    toExplore = Stack()
+    visited = set()
+    path = []
+    toExplore.push((problem.getStartState(), path))
+
+    # while there are still nodes to explore
+    while not toExplore.isEmpty():
+        # pop the node, and the path off the stack
+        node, path = toExplore.pop()
+        # if the node is the goal state, return the path
+        if problem.isGoalState(node):
+            return path
+        # if the node is not in the set of visited nodes
+        if node not in visited:
+            # add the node to visited
+            visited.add(node)
+            # for each direction in the set of directions we can go
+            for successor in problem.getSuccessors(node):
+                # push the successor node, and the direction to the path before adding the path back to the stack
+                toExplore.push((successor[ 0 ], path + [successor[ 1 ]]))
+    return path
 
 def breadthFirstSearch(problem):
     """Search the shallowest nodes in the search tree first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    from util import Queue
+    queue = Queue()
+    visited = set()
+    startState = problem.getStartState()
+    path = []
+    # add the root node to the queue
+    queue.push((startState, path))
+    # while the exploration queue is not empty
+    while not queue.isEmpty():
+        node, path = queue.pop()
+        # if the current node is the goal state, return it.
+        if problem.isGoalState(node):
+            return path
+        if node not in visited:
+            visited.add(node)
+            for successor in problem.getSuccessors(node):
+                queue.push((successor[ 0 ], path + [successor[ 1 ]]))
+    return path
+   
+    
+    
 
 def uniformCostSearch(problem):
     """Search the node of least total cost first."""
     "*** YOUR CODE HERE ***"
-    util.raiseNotDefined()
+    #util.raiseNotDefined()
+    from util import PriorityQueue    
+    pQueue = PriorityQueue()    
+    visited = set()
+    
+    # Push the start state onto the priority queue with a cost of 0
+    pQueue.push((problem.getStartState(), [], 0), 0)
+
+    while not pQueue.isEmpty(): 
+        node, path, cost = pQueue.pop()  
+        # If the current node is the goal, return the path
+        if problem.isGoalState(node):
+            return path 
+
+        # Mark the node as visited
+        if node not in visited:             
+            visited.add(node) 
+
+            # Explore successors
+            for successor in problem.getSuccessors(node):
+                successor_node = successor[0]
+                action = successor[1]
+                step_cost = successor[2]
+
+                # Push the successor onto the frontier with updated cost
+                total_cost = cost + step_cost
+                pQueue.push((successor_node, path + [action], total_cost), total_cost)
+
+    return []  # Return empty list if no solution is found
 
 def nullHeuristic(state, problem=None):
     """
