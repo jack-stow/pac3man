@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{86fb4f5a-7a88-4f0b-874a-99f45433e13d}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>search\pacman.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>search</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="markov\babbler.py" />
+    <Compile Include="markov\graphit.py" />
+    <Compile Include="markov\maketest.py" />
+    <Compile Include="markov\test_markov.py" />
+    <Compile Include="multiagent\autograder.py" />
+    <Compile Include="multiagent\game.py" />
+    <Compile Include="multiagent\ghostAgents.py" />
+    <Compile Include="multiagent\grading.py" />
+    <Compile Include="multiagent\graphicsDisplay.py" />
+    <Compile Include="multiagent\graphicsUtils.py" />
+    <Compile Include="multiagent\keyboardAgents.py" />
+    <Compile Include="multiagent\layout.py" />
+    <Compile Include="multiagent\multiAgents.py" />
+    <Compile Include="multiagent\multiagentTestClasses.py" />
+    <Compile Include="multiagent\pacman.py" />
+    <Compile Include="multiagent\pacmanAgents.py" />
+    <Compile Include="multiagent\projectParams.py" />
+    <Compile Include="multiagent\run.py" />
+    <Compile Include="multiagent\testClasses.py" />
+    <Compile Include="multiagent\testParser.py" />
+    <Compile Include="multiagent\textDisplay.py" />
+    <Compile Include="multiagent\util.py" />
+    <Compile Include="reinforcement\analysis.py" />
+    <Compile Include="reinforcement\autograder.py" />
+    <Compile Include="reinforcement\crawler.py" />
+    <Compile Include="reinforcement\environment.py" />
+    <Compile Include="reinforcement\featureExtractors.py" />
+    <Compile Include="reinforcement\game.py" />
+    <Compile Include="reinforcement\ghostAgents.py" />
+    <Compile Include="reinforcement\grading.py" />
+    <Compile Include="reinforcement\graphicsCrawlerDisplay.py" />
+    <Compile Include="reinforcement\graphicsDisplay.py" />
+    <Compile Include="reinforcement\graphicsGridworldDisplay.py" />
+    <Compile Include="reinforcement\graphicsUtils.py" />
+    <Compile Include="reinforcement\gridworld.py" />
+    <Compile Include="reinforcement\keyboardAgents.py" />
+    <Compile Include="reinforcement\layout.py" />
+    <Compile Include="reinforcement\learningAgents.py" />
+    <Compile Include="reinforcement\mdp.py" />
+    <Compile Include="reinforcement\pacman.py" />
+    <Compile Include="reinforcement\pacmanAgents.py" />
+    <Compile Include="reinforcement\projectParams.py" />
+    <Compile Include="reinforcement\qlearningAgents.py" />
+    <Compile Include="reinforcement\reinforcementTestClasses.py" />
+    <Compile Include="reinforcement\run.py" />
+    <Compile Include="reinforcement\testClasses.py" />
+    <Compile Include="reinforcement\testParser.py" />
+    <Compile Include="reinforcement\textDisplay.py" />
+    <Compile Include="reinforcement\textGridworldDisplay.py" />
+    <Compile Include="reinforcement\util.py" />
+    <Compile Include="reinforcement\valueIterationAgents.py" />
+    <Compile Include="search\autograder.py" />
+    <Compile Include="search\eightpuzzle.py" />
+    <Compile Include="search\game.py" />
+    <Compile Include="search\ghostAgents.py" />
+    <Compile Include="search\grading.py" />
+    <Compile Include="search\graphicsDisplay.py" />
+    <Compile Include="search\graphicsUtils.py" />
+    <Compile Include="search\graphProblem.py" />
+    <Compile Include="search\keyboardAgents.py" />
+    <Compile Include="search\layout.py" />
+    <Compile Include="search\pacman.py" />
+    <Compile Include="search\pacmanAgents.py" />
+    <Compile Include="search\projectParams.py" />
+    <Compile Include="search\run.py" />
+    <Compile Include="search\search.py" />
+    <Compile Include="search\searchAgents.py" />
+    <Compile Include="search\searchTestClasses.py" />
+    <Compile Include="search\submission_autograder.py" />
+    <Compile Include="search\testClasses.py" />
+    <Compile Include="search\testParser.py" />
+    <Compile Include="search\textDisplay.py" />
+    <Compile Include="search\util.py" />
+    <Compile Include="spam\spamclassifier.py" />
+    <Compile Include="util\convert.py" />
+    <Compile Include="util\guten.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="markov\img\test1.png" />
+    <Content Include="markov\img\test2.png" />
+    <Content Include="markov\tests\test1.txt" />
+    <Content Include="markov\tests\test2.txt" />
+    <Content Include="markov\tests\test3-sources.txt" />
+    <Content Include="markov\tests\test3.txt" />
+    <Content Include="search\commands.txt" />
+    <Content Include="search\test_cases\extra\g1.txt" />
+    <Content Include="spam\stopwords.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="markov" />
+    <Folder Include="markov\img" />
+    <Folder Include="markov\tests" />
+    <Folder Include="multiagent" />
+    <Folder Include="reinforcement" />
+    <Folder Include="search" />
+    <Folder Include="search\test_cases\" />
+    <Folder Include="search\test_cases\extra" />
+    <Folder Include="spam" />
+    <Folder Include="util" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
